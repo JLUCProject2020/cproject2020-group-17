@@ -3478,7 +3478,7 @@ void turn(struct player* playerX)
 {
 	char input;
 	int step;
-	/*更新玩家物品和位置*/
+	/*更新玩家物品*/
 	BeginBatchDraw();
 	show_item();
 	item_number(&playerA);
@@ -3486,14 +3486,6 @@ void turn(struct player* playerX)
 	item_number(&playerC);
 	item_number(&playerD);
 	signal(playerX, false);
-	if (!playerA.state[FAILURE])
-		select_position(&playerA, false);
-	if (!playerB.state[FAILURE])
-		select_position(&playerB, false);
-	if (!playerC.state[FAILURE])
-		select_position(&playerC, false);
-	if (!playerD.state[FAILURE])
-		select_position(&playerD, false);
 	EndBatchDraw();
 	struct player copyA = playerA;
 	struct player copyB = playerB;
@@ -3810,6 +3802,14 @@ int main(void)
 		delete_course_level(&playerC);
 	if (playerD.state[FAILURE])
 		delete_course_level(&playerD);
+	if (!playerA.state[FAILURE])
+		select_position(&playerA, false);
+	if (!playerB.state[FAILURE])
+		select_position(&playerB, false);
+	if (!playerC.state[FAILURE])
+		select_position(&playerC, false);
+	if (!playerD.state[FAILURE])
+		select_position(&playerD, false);
 	show_item();
 	show_player(&playerA, false);
 	show_state(&playerA);
