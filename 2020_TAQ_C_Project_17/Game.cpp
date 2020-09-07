@@ -1242,14 +1242,14 @@ void view_course(void)
 {
 	BeginBatchDraw();
 	setlinecolor(RED);
-	if (!playerA.state[FAILURE])
-		select_position(&playerA, false);
-	if (!playerB.state[FAILURE])
-		select_position(&playerB, false);
-	if (!playerC.state[FAILURE])
-		select_position(&playerC, false);
-	if (!playerD.state[FAILURE])
-		select_position(&playerD, false);
+	if (playerA.state[FAILURE])
+		delete_course_level(&playerA);
+	if (playerB.state[FAILURE])
+		delete_course_level(&playerB);
+	if (playerC.state[FAILURE])
+		delete_course_level(&playerC);
+	if (playerD.state[FAILURE])
+		delete_course_level(&playerD);
 	EndBatchDraw();
 	_stprintf_s(guide_text, _T("鼠标右键查看课程信息\n鼠标左键跳过查看"));
 	settextcolor(BLACK);
@@ -3478,7 +3478,7 @@ void turn(struct player* playerX)
 {
 	char input;
 	int step;
-	/*更新玩家物品*/
+	/*更新玩家物品和位置*/
 	BeginBatchDraw();
 	show_item();
 	item_number(&playerA);
@@ -3486,6 +3486,14 @@ void turn(struct player* playerX)
 	item_number(&playerC);
 	item_number(&playerD);
 	signal(playerX, false);
+	if (!playerA.state[FAILURE])
+		select_position(&playerA, false);
+	if (!playerB.state[FAILURE])
+		select_position(&playerB, false);
+	if (!playerC.state[FAILURE])
+		select_position(&playerC, false);
+	if (!playerD.state[FAILURE])
+		select_position(&playerD, false);
 	EndBatchDraw();
 	struct player copyA = playerA;
 	struct player copyB = playerB;
