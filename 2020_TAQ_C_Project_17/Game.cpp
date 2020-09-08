@@ -3574,12 +3574,30 @@ void turn(struct player* playerX)
 						position(playerX);
 						break;
 					}
+					else if(step < 6 && playerX->energy > 4)
+					{
+						playerX->energy -= 4;
+						playerX->position = -6;
+					}
+					else if (step >= 6)
+						playerX->position = -6;
 					else
 					{
 						select_position(playerX, true);
-						playerX->position = -6;
-						if (step < 6)
-							playerX->energy -= 4;
+						playerX->position = (playerX->position + step) % 24;
+						settextcolor(WHITE);
+						settextstyle(15, 0, _T("宋体"));
+						drawtext(guide_text, &guide_r, DT_CENTER | DT_WORDBREAK);
+						_stprintf_s(guide_text, _T("精力不足，无法进入刷夜区"));
+						settextcolor(BLACK);
+						settextstyle(15, 0, _T("宋体"));
+						drawtext(guide_text, &guide_r, DT_CENTER | DT_WORDBREAK);
+						Sleep(1000);
+						settextcolor(WHITE);
+						settextstyle(15, 0, _T("宋体"));
+						drawtext(guide_text, &guide_r, DT_CENTER | DT_WORDBREAK);
+						position(playerX);
+						break;
 					}
 				}
 				else
