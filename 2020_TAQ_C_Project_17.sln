@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2020_TAQ_C_Project_17", "2020_TAQ_C_Project_17\2020_TAQ_C_Project_17.vcxproj", "{6FC82527-4036-45F7-AC78-6011DB8F9349}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Game Setup", "Game Setup\Game Setup.vdproj", "{AFBC518F-D9AE-4EDF-AD79-0C6FCC4B465A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{6FC82527-4036-45F7-AC78-6011DB8F9349}.Release|x64.Build.0 = Release|x64
 		{6FC82527-4036-45F7-AC78-6011DB8F9349}.Release|x86.ActiveCfg = Release|Win32
 		{6FC82527-4036-45F7-AC78-6011DB8F9349}.Release|x86.Build.0 = Release|Win32
+		{AFBC518F-D9AE-4EDF-AD79-0C6FCC4B465A}.Debug|x64.ActiveCfg = Debug
+		{AFBC518F-D9AE-4EDF-AD79-0C6FCC4B465A}.Debug|x86.ActiveCfg = Debug
+		{AFBC518F-D9AE-4EDF-AD79-0C6FCC4B465A}.Release|x64.ActiveCfg = Release
+		{AFBC518F-D9AE-4EDF-AD79-0C6FCC4B465A}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
